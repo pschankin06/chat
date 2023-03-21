@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="chat__screen">
+        <div class="chat__screen-controls">
+            <div class="chat__screen-settings">
+                Настройки
+            </div>
+            <div class="chat__screen-exit">
+                Выйти
+            </div>
+        </div>
+        <div class="chat__screen-wrapper">
+            <div class="chat__screen-dialogue">
+                <div class="chat__screen-notification">
+                    <p class="notification-text">
+                        all history has been loaded
+                    </p>
+                </div>
+                <!-- <div class="chat__screen-message chat__screen-message--mine chat__screen-message--received">
+                    <p class="chat__screen-message-text">Я: Добрый день!</p>
+                    <div class="chat__screen-message-time">18:45</div>
+                </div>
+                <div class="chat__screen-message chat__screen-message--companion chat__screen-message--received">
+                    <p class="chat__screen-message-text">Собеседник мой: Добрый день!</p>
+                    <div class="chat__screen-message-time">18:45</div>
+                </div>
+                <div class="chat__screen-message chat__screen-message--companion chat__screen-message--received">
+                    <p class="chat__screen-message-text">Собеседник мой: А это второе и, кажется, оно очень длинное,
+                        чтобы
+                        поместиться на одной строке</p>
+                    <div class="chat__screen-message-time">18:45</div>
+                </div>
+                <div class="chat__screen-message chat__screen-message--mine chat__screen-message--sended">
+                    <p class="chat__screen-message-text">Я: Добрый день!</p>
+                    <div class="chat__screen-message-time">18:45</div>
+                </div> -->
+            </div>
+        </div>
+        <form class="chat__screen-form" action="#">
+            <input class="chat__screen-input" type="text" placeholder="сообщение..">
+            <button class="chat__screen-button" type="submit">
+                <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M4.10938 3.57031V4.75781H0.296875V3.57031H4.10938ZM11.0312 4.0625L5.47656 1.89844V0.40625L12.1484 3.35938V4.27344L11.0312 4.0625ZM5.47656 5.96875L11.0469 3.75781L12.1484 3.59375V4.5L5.47656 7.46094V5.96875Z"
+                        fill="black" />
+                </svg>
+            </button>
+        </form>
+    </div>
+
+    <template class="template__message">
+        <p class="chat__screen-message-text"></p>
+        <div class="chat__screen-message-time"></div>
+    </template>
+
+    <div class="modal-box modal-box__settings">
+        <div class="modal-box__panel modal-box__settings-panel">
+            <div class="modal-box__nav modal-box__settings-nav">
+                <div class="modal-box__settings-name">
+                    Настройки
+                </div>
+                <div class="modal-box__exit modal-box__settings-exit">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.45"
+                            d="M12.4653 3.53246L13.9071 4.9743L5.63731 13.2441L4.19547 11.8023L12.4653 3.53246ZM5.5793 3.37502L14.3629 12.1586L12.8299 13.6916L4.04632 4.90801L5.5793 3.37502Z"
+                            fill="black" />
+                    </svg>
+                </div>
+            </div>
+            <form class="modal-box__settings-form" action="#">
+                <div class="form-name">Имя в чате</div>
+                <div class="chat__screen-form">
+                    <input class="modal-box__settings-input modal-box__input" type="text" placeholder="имя..">
+                    <button class="modal-box__settings-button" type="submit">
+                        <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4.10938 3.57031V4.75781H0.296875V3.57031H4.10938ZM11.0312 4.0625L5.47656 1.89844V0.40625L12.1484 3.35938V4.27344L11.0312 4.0625ZM5.47656 5.96875L11.0469 3.75781L12.1484 3.59375V4.5L5.47656 7.46094V5.96875Z"
+                                fill="black" />
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-box modal-box__authorization">
+        <div class="modal-box__panel modal-box__authorization-panel">
+            <div class="modal-box__nav modal-box__authorization-nav">
+                <div class="modal-box__authorization-name">
+                    Авторизация
+                </div>
+                <div class="modal-box__exit modal-box__authorization-exit">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.45"
+                            d="M12.4653 3.53246L13.9071 4.9743L5.63731 13.2441L4.19547 11.8023L12.4653 3.53246ZM5.5793 3.37502L14.3629 12.1586L12.8299 13.6916L4.04632 4.90801L5.5793 3.37502Z"
+                            fill="black" />
+                    </svg>
+                </div>
+            </div>
+            <form class="modal-box__authorization-form" action="#">
+                <div class="form-name">Почта:</div>
+                <div class="authorization__screen-form">
+                    <input class="modal-box__authorization-input modal-box__input" type="text" placeholder="email..">
+                    <button class="modal-box__authorization-button" type="submit">
+                        Получить код
+                    </button>
+                    <button class="modal-box__authorization-button modal-box__authorization-button--enter"
+                        >
+                        Ввести код
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-box modal-box__confirmation">
+        <div class="modal-box__panel modal-box__confirmation-panel">
+            <div class="modal-box__nav modal-box__confirmation-nav">
+                <div class="modal-box__confirmation-name">
+                    Подтверждение
+                </div>
+                <div class="modal-box__exit modal-box__confirmation-exit">
+                    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.45"
+                            d="M12.4653 3.53246L13.9071 4.9743L5.63731 13.2441L4.19547 11.8023L12.4653 3.53246ZM5.5793 3.37502L14.3629 12.1586L12.8299 13.6916L4.04632 4.90801L5.5793 3.37502Z"
+                            fill="black" />
+                    </svg>
+                </div>
+            </div>
+            <form class="modal-box__confirmation-form" action="#">
+                <div class="form-name">Код:</div>
+                <div class="confirmation__screen-form">
+                    <input class="modal-box__confirmation-input modal-box__input" type="text" placeholder="code..">
+                    <button class="modal-box__confirmation-button" type="submit">
+                        Войти
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/modal.js"></script>
+</body>
+
+</html>
